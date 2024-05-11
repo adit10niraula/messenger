@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        {{request.user}}
+        <h2>messenger</h2>
+        {% for friend in friends %}
+        <div class="friends">
+            <div class="person">
+                <div class="profile">
+                <img src="{{friend.friend.image.url}}" alt="">
+            </div>
+                <div class="info">
+                    <div class="name">{{friend.friend.names}}</div>
+                    <div class="message">
+                        <p>hello how are you</p>
+                        <span>time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+       
+        
+        
+
+
+    </div>
+    
+</body>
+</html>
